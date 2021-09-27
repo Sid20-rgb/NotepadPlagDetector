@@ -78,6 +78,7 @@ def mainWindow():
 
     # Save the existing file
     def save():
+        '''It saves the change in existing as well as new file in a particular directory.'''
         global open_status_name
         if open_status_name:
             root.title("Save File")
@@ -92,10 +93,12 @@ def mainWindow():
 
     # Cut and copy text
     def cut():
+        '''It selects the typed texts and cuts and copies the selected texts.'''
         text.event_generate(("<<Cut>>"))
 
     # Copy text
     def copy():
+        '''It copies the selected texts.'''
         text.event_generate(("<<Copy>>"))
 
     #Paste text
