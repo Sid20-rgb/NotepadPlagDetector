@@ -103,14 +103,17 @@ def mainWindow():
 
     #Paste text
     def paste():
+        '''It pastes the copied texts in the frame.'''
         text.event_generate(("<<Paste>>"))
 
     #Undo the task
     def undo():
+        '''It undos the tasks that recently being performed.'''
         text.event_generate(("<<Undo>>"))
 
     #Redo the task
     def redo():
+        '''Once undoing it will redo the same task in the frame.'''
         text.event_generate(("<<Redo>>"))
 
     def about():
