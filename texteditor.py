@@ -18,6 +18,7 @@ bg_label = Label(splash, image=bg)
 bg_label.pack()
 
 def mainWindow():
+    '''First window after the splash that reads and opens the text as well as other files and also creates the text file.'''
     splash.destroy()
     root = Tk()
     root.title("NotePad")
@@ -31,6 +32,7 @@ def mainWindow():
 
     # Create New File Function
     def new_file():
+        '''Opens the window for a new text file.'''
         text.delete("1.0", END)
         root.title("New File - TextPad!")
         #status_bar.config(text = "New File       ")
@@ -39,6 +41,7 @@ def mainWindow():
 
     # Open txt file
     def open_file():
+        '''View towards the respective directory and opens the existing file.'''
         text.delete("1.0", END)
         ## Open a existing file
         text_file = filedialog.askopenfilename(initialdir="/Documents",
@@ -61,6 +64,7 @@ def mainWindow():
 
     # Save as file
     def save_as():
+        '''It saves the file in a user given particular format.'''
         text_file = filedialog.asksaveasfilename(defaultextension= ".*", initialdir = "/Documents",
                                             title = "Save file",
                                             filetypes = (("text Files", "*.txt"),
