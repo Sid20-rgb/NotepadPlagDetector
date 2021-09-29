@@ -5,6 +5,7 @@ from difflib import SequenceMatcher
 from tkinter.messagebox import showinfo
 from tkinter import font
 from tkinter import colorchooser
+from tkinter import messagebox
 
 splash = Tk()
 splash.title("Intro")
@@ -124,6 +125,7 @@ def mainWindow():
         showinfo("Help", "Please visit the website mentioned below for help.")
 
     def bold():
+        '''It makes the selected text bold.'''
         #Create our font
         bold = font.Font(text, text.cget("font"))
         bold.configure(weight = "bold")
@@ -138,6 +140,7 @@ def mainWindow():
 
     # Create italic font
     def italic():
+        '''Changes the font style of selected text to italic.'''
         #Create our font
         italic = font.Font(text, text.cget("font"))
         italic.configure(slant = "italic")
@@ -250,7 +253,7 @@ def mainWindow():
             text_file1 = filedialog.askopenfilename(initialdir="/Documents",
                                                    title="Select a file",
                                                    filetypes=(("text files", "*.txt"), ("python files", "*.py"),
-                                                              ("all files", "*.*")))
+                                                              ("all files", "*.*")), parent = top)
             # Make an existing file global
             if text_file1:
                 global open_status_name1
