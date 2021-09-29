@@ -155,6 +155,7 @@ def mainWindow():
 
     # Create text colour
     def color_txt():
+        '''Changes the font colour of the selected text to any customized colour.'''
         #pick a color
         my_color = colorchooser.askcolor()[1]
         if my_color:
@@ -240,6 +241,7 @@ def mainWindow():
 
     # Create a new window
     def newWindow():
+        '''Second window that only allows to open the existed file to check the plagarism between two files..'''
         top = Toplevel()
         top.title("Notepad2")
         top.geometry("1000x600+145+50")
@@ -248,6 +250,7 @@ def mainWindow():
 
         # Open txt file
         def open_file1():
+            '''It opens the file which is the system already.'''
             text1.delete("1.0", END)
             ## Open a existing file
             text_file1 = filedialog.askopenfilename(initialdir="/Documents",
