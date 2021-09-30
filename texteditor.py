@@ -7,6 +7,7 @@ from tkinter import font
 from tkinter import colorchooser
 from tkinter import messagebox
 
+#----------------------------Splash Screen-------------------------------
 splash = Tk()
 splash.title("Intro")
 splash.geometry("1000x600+145+50")
@@ -18,6 +19,7 @@ bg = ImageTk.PhotoImage(file="images/splash1.png")
 bg_label = Label(splash, image=bg)
 bg_label.pack()
 
+#------------------------------First Window--------------------------------
 def mainWindow():
     '''First window after the splash that reads and opens the text as well as other files and also creates the text file.'''
     splash.destroy()
@@ -236,6 +238,7 @@ def mainWindow():
     text_color.place(x = 200, y = 62)
 
 
+##------------------------------Second Window--------------------------------
     # Create a new window
     def newWindow():
         '''Second window that only allows to open the existed file to check the plagarism between two files..'''
@@ -267,7 +270,7 @@ def mainWindow():
             text1.insert(END, stuff1)
             text_file1.close()
 
-        #Function to detect plag
+        #Function to detect plagarism
         def plag():
             '''Similarity between two text files is being checked and the result is
             being provided in percentage.'''
@@ -344,6 +347,7 @@ def mainWindow():
         plag_button1.place(x = 780, y = 13)
 
         top.mainloop()
+
     plag_button = Button(root, text = "Check Plagiarism", font = ("Lucida Sans", 12), bg = "#9d9d9c", fg = "BLACK", activebackground = "#9d9d9c",
                           borderwidth = 0, cursor="hand2",  command = newWindow)
     plag_button.place(x = 780, y = 13)
