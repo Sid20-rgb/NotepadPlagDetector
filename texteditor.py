@@ -235,7 +235,7 @@ def mainWindow():
     text_color = Button(root, text = "Text Color", font = 'sans 10', borderwidth = 0, cursor = "hand2", command = color_txt)
     text_color.place(x = 200, y = 62)
     #status_bar = Label(root, text = "Ready         ", anchor = E)
-    #status_bar.pack(fill = X , side = BOTTOM, ipady = 5)
+
 
 
 
@@ -290,13 +290,13 @@ def mainWindow():
             file2data = file2.read()
             similarity = SequenceMatcher(None, file1data, file2data).ratio()
             result = similarity * 100
+            n = int(result)
 
-            percentage1 = Label(ans, text = "The Similarity between these two files is", font = '10', bg = "#ededed")
-            percentage1.place(x = 130, y = 130)
-            percentage = Label(ans, text= result, bg = "#ededed", fg = "RED", font = "10")
-            percentage.place(x = 270, y = 190)
-            per = Label(ans, text = "%", bg = "#ededed", fg = "RED", font = "10")
-            per.place(x=330, y=190)
+            percentage1 = Label(ans, text = "The Similarity between these two files:", font = ("Lucida Sans", 12), bg = "#ededed")
+            percentage1.place(x = 162, y = 130)
+            percentage = Label(ans, text= (f"{n}%"), bg = "#ededed", fg = "RED",  font = ("Lucida Sans", 25))
+            percentage.place(x = 260, y = 180)
+
             #Exit Button
             exit = Button(ans, text = "EXIT", font = ("Lucida Sans", 12), bg = "#9d9d9c", fg = "BLACK", activebackground = "#9d9d9c",
                           borderwidth = 0, cursor="hand2", command = ans.destroy)
