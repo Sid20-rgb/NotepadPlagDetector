@@ -234,9 +234,6 @@ def mainWindow():
 
     text_color = Button(root, text = "Text Color", font = 'sans 10', borderwidth = 0, cursor = "hand2", command = color_txt)
     text_color.place(x = 200, y = 62)
-    #status_bar = Label(root, text = "Ready         ", anchor = E)
-
-
 
 
     # Create a new window
