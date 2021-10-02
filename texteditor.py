@@ -71,7 +71,7 @@ def mainWindow():
         text_file = filedialog.asksaveasfilename(defaultextension= ".*", initialdir = "/Documents",
                                             title = "Save file",
                                             filetypes = (("text Files", "*.txt"),
-                                              ("all files", "*.*")))
+                                              ("python file", "*.py"),("html file","*.html")))
         if text_file:
             root.title(f"{text_file}")
             #Save it
@@ -353,6 +353,8 @@ def mainWindow():
     plag_button.place(x = 780, y = 13)
 
     root.mainloop()
+
+
 
 #Splash Screen Timer
 splash.after(600, mainWindow)
