@@ -71,13 +71,14 @@ def mainWindow():
         text_file = filedialog.asksaveasfilename(defaultextension= ".*", initialdir = "/Documents",
                                             title = "Save file",
                                             filetypes = (("text Files", "*.txt"),
-                                              ("python file", "*.py"),("html file","*.html")))
+                                              ("python file", "*.py"),("html file","*.html"),("All", "*.*")))
         if text_file:
             root.title(f"{text_file}")
             #Save it
-            text_file = open(text_file , 'w')
+            text_file = open(text_file, 'w')
             text_file.write(text.get(1.0, END))
             text_file.close()
+            messagebox.showinfo('Saved', 'Your file is saved.')
 
     # Save the existing file
     def save():
@@ -90,7 +91,7 @@ def mainWindow():
             text_file.write(text.get(1.0, END))
             text_file.close()
 
-            showinfo("Saved", "Your file is saved.")
+            messagebox.showinfo("Saved", "Your file is saved.")
         else:
             save_as()
 
@@ -124,7 +125,7 @@ def mainWindow():
 
     #help Function
     def help():
-        showinfo("Help", "Please visit the website mentioned below for help.")
+        showinfo("Help", "Please click the youtube link mentioned below for help.")
 
     def bold():
         '''It makes the selected text bold.'''
@@ -192,7 +193,8 @@ def mainWindow():
     scroll_hor.pack(side = BOTTOM, fill = X)
 
     #Create Text
-    text = Text(frame, width = 103, height = 27, selectbackground = "green", selectforeground = "white", undo = True, yscrollcommand = scroll_bar.set, xscrollcommand = scroll_hor.set, wrap = "none")
+    text = Text(frame, width = 103, height = 27, selectbackground = "green", selectforeground = "white", undo = True,
+                yscrollcommand = scroll_bar.set, xscrollcommand = scroll_hor.set, wrap = "none")
     text.pack()
 
     #Configure our scrollbar
@@ -284,6 +286,7 @@ def mainWindow():
             bg_label2 = Label(ans, image=bg2)
             bg_label2.pack()
 
+            # Check the similarity
             file1 = open(open_status_name, 'r')
             file2 = open(open_status_name1, 'r')
             file1data = file1.read()
