@@ -358,7 +358,6 @@ def mainWindow():
     root.mainloop()
 
 
-
 #Splash Screen Timer
 splash.after(600, mainWindow)
 
