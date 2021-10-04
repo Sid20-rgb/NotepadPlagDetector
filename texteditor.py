@@ -240,7 +240,7 @@ def mainWindow():
     text_color.place(x = 200, y = 62)
 
 
-##------------------------------Second Window--------------------------------
+#------------------------------Second Window--------------------------------
     # Create a new window
     def newWindow():
         '''Second window that only allows to open the existed file to check the plagarism between two files..'''
